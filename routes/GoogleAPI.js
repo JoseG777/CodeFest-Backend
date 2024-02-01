@@ -4,7 +4,7 @@ require('dotenv').config();
 const router = express();
 router.use(express.json());
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 router.post('/', async (req, res) => {
     const { query, model = "gemini-pro" } = req.body; 
