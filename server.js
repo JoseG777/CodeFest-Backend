@@ -7,7 +7,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-const googleAIRoutes = require('./routes/GeminiAPI');
+const googleAIRoutes = require('./routes/GoogleAPI');
 app.use('/api/generateContent', googleAIRoutes);
 
 app.use((req, res, next) => {
