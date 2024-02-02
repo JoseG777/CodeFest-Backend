@@ -10,6 +10,9 @@ app.use(cors());
 const googleAIRoutes = require('./routes/GoogleAPI');
 app.use('/api/generateContent', googleAIRoutes);
 
+const AmadeusAPI = require('./routes/AmadeusAPI');
+app.use('/amadeus', AmadeusAPI);
+
 app.use((req, res, next) => {
   res.status(404).send("404: Page not found");
 });
