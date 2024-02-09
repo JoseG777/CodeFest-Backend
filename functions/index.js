@@ -5,7 +5,14 @@ const axios = require("axios");
 const {GoogleGenerativeAI} = require("@google/generative-ai");
 
 const app = express();
-app.use(cors({origin: true}));
+
+const corsOptions = {
+  origin: "https://codefest-97b85.web.app",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 const amadeusApiKey = functions.config().amadeus.apikey;
